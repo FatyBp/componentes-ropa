@@ -1,0 +1,70 @@
+<!-- <input type="text"[(ngModel)]="personas"> -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <title>Crud de registros con ngModel y ts</title>
+</head>
+
+<body>
+  <h2 class="text-center mt-4">Crud de registros con ngModel y ts</h2>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col">
+        <table border="1" class="table table-bordered border-success">
+          <thead>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Borrar</th>
+            <th>Editar</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let articulos of inventario">
+              <td> {{ articulos.id }} </td>
+              <td>{{articulos.nombre}}</td>
+              <td>{{articulos.precio}}</td>
+              <td>
+                <button class="btn btn-outline-danger" (click)="eliminar(articulos.id)">Borrar</button>
+              </td>
+              <td>
+                <button class="btn btn-outline-info" (click)="seleccionar(articulos)">Seleccionar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col align-self-center">
+        <div class="card" style="width: 18rem;">
+          <p>
+            <label for="id">Id</label>
+            <input type="number" [(ngModel)]="formulario.id">
+          </p>
+          <p>
+            <label for="Nombre">Nombre</label>
+            <input type="text" [(ngModel)]="formulario.nombre">
+          </p>
+          <p>
+            <label for="Precio">Precio</label>
+            <input type="number" [(ngModel)]="formulario.precio">
+          </p>
+          <button class="btn btn-outline-success" (click)="agregar()">Agregar</button>
+          <br>
+          <button class="btn btn-outline-warning" (click)="editar(formulario.id)">Editar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

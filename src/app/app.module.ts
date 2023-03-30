@@ -2,14 +2,18 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { ListadoropaComponent } from './ropa/listadoropa/listadoropa.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListadoropaComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule,
+    FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
